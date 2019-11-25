@@ -44,6 +44,7 @@ class newPID{
   double ki;
   double kd;
   double dT;
+
  public:
   /*
    * @brief Constructor for the newPID class.
@@ -56,14 +57,14 @@ class newPID{
    * @param None.
    * @return None.
    */
-  virtual ~newPID(){};
+  virtual ~newPID() {}
   /*
    * @brief Virtual function to compute the PID gain
    * @param target velocity given to the PID(targetVelocity).
    * @param The actual value given to the PID(actualVal).
    *
    */
-  virtual double compute(double targetVelocity,double actualVal)=0;
+  virtual double compute(double targetVelocity, double actualVal) = 0;
   /*
    * @brief Virtual function to set the value of Proportional Gain(Kp).
    * @param The value of the Proportional Gain(Kp).
@@ -86,4 +87,4 @@ class newPID{
 };
 
 
-#endif /* INCLUDE_NEWPID_HPP_ */
+#endif  // INCLUDE_NEWPID_HPP_ //
