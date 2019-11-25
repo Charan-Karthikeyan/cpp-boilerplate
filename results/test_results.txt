@@ -1,0 +1,21 @@
+[==========] Running 5 tests from 2 test cases.
+[----------] Global test environment set-up.
+[----------] 4 tests from gmockStatic
+[ RUN      ] gmockStatic.testSetKpFunc
+[       OK ] gmockStatic.testSetKpFunc (0 ms)
+[ RUN      ] gmockStatic.testSetKiFunc
+[       OK ] gmockStatic.testSetKiFunc (0 ms)
+[ RUN      ] gmockStatic.testSetKdFunc
+[       OK ] gmockStatic.testSetKdFunc (0 ms)
+[ RUN      ] gmockStatic.testComputeFunc
+[       OK ] gmockStatic.testComputeFunc (0 ms)
+[----------] 4 tests from gmockStatic (0 ms total)
+
+[----------] 1 test from PIDTest
+[ RUN      ] PIDTest.testGainsFunc
+[       OK ] PIDTest.testGainsFunc (0 ms)
+[----------] 1 test from PIDTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 2 test cases ran. (0 ms total)
+[  PASSED  ] 5 tests.
