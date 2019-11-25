@@ -1,22 +1,26 @@
-# C++ Boilerplate
-[![Build Status](https://travis-ci.org/Charan-Karthikeyan/cpp-boilerplate.svg?branch=master)](https://travis-ci.org/Charan-Karthikeyan/cpp-boilerplate)
-[![Coverage Status](https://coveralls.io/repos/github/Charan-Karthikeyan/cpp-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/Charan-Karthikeyan/cpp-boilerplate?branch=master)
+# PID Controller with GMOCK
+[![Build Status](https://travis-ci.org/Charan-Karthikeyan/cpp-boilerplate.svg?branch=GMock_Extra_Credit)](https://travis-ci.org/Charan-Karthikeyan/cpp-boilerplate)
+[![Coverage Status](https://coveralls.io/repos/github/Charan-Karthikeyan/cpp-boilerplate/badge.svg?branch=GMock_Extra_Credit)](https://coveralls.io/github/Charan-Karthikeyan/cpp-boilerplate?branch=GMock_Extra_Credit)
 ---
 
 ## Authors
-Satyarth Praveen (Driver)
-Ishan Patel (Navigator)
+Charan Karthikeyan Parthasarathy Vasanthi
 
-Part 2:
-Charan Karthikeyan (Driver)
-Corbyn Yhap (Navigator)
 ## Overview
 
-A simple exercise to demonstrate a Test-Driven development environment.
+This branch is to show the usage of GMock test on a PID controller. The dependencies are 
+cmake
+gtest
+gmock
+
+## GMock Test
+For the GMock Test we create a virtual class "newPID". This is to test the GMock framework with C++. The virtual class is is then inherited by the PID class and compute function is used.
+The mockTest file in the test folder consists of the gmock methods to test the class. 
+The Cmake lists in the test folder and the main CMakeList is changed to include the GMock folder and the dependencies for them.
 
 ## Standard install via command-line
 ```
-git clone --recursive https://github.com/satyarth934/cpp-boilerplate.git
+git clone <repository>
 cd <path to repository>
 mkdir build
 cd build
@@ -26,15 +30,16 @@ Run tests: ./test/cpp-test
 Run program: ./app/shell-app
 ```
 
-## TODO/ Things to improve
-Currently the class implemented has only one function. That function is currently being tested,
-however this class can be improved in a couple of ways. One could add a function to adjust the gains
-in order to bring the actaul velocity closer to the target velocity. In this implementation we
-assume that the value of dt to be 1 second, however this can be improved by allowing the user to 
-adjust the value as needed.We would then need to update the tests to include these new functions. 
-Ultimately the class currently passes the original class design. Once the implementation was 
-complete, the test cases completed in travis built sucessfully and covaerage of the files was 
-calculated to be 100%.  
+## Cpplint check
+```
+cd  <path to repository>
+cpplint $( find . -name \*.hpp -or -name \*.cpp | grep -vE -e "^./build/" -e "^./vendor/" -e "^./docs/" -e "^./results" )
+```
 
+## Cppcheck check
+```
+cd <path to repository>
+cppcheck --enable=all --std=c++11 -I include/ --suppress=missingIncludeSystem $( find . -name *.cpp | grep -vE -e "^./build/" -e "^./vendor/" )
+```
 
 
